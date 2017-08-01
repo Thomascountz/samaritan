@@ -1,0 +1,10 @@
+<% @organization.errors.messages.each do |message| %>
+  <p><%= message[0].to_s %> <% message[1].each do |error| %>
+                           <%= error %>
+                         <% end %></p>
+<% end %>
+
+<%= simple_form_for(@organization, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.input :name, autofocus: true %>
+  <%= f.button :submit %>
+<% end %>
