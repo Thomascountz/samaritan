@@ -21,6 +21,7 @@
 #  postal_code       :string
 #  country           :string
 #  time_zone         :string           not null
+#  organization_id   :integer
 #
 
 FactoryGirl.define do
@@ -38,6 +39,7 @@ FactoryGirl.define do
     sponsoring_org    "The Clean Parks Committee"
     max_signups       20
     owner
+    organization
   end
 
   factory :invalid_project, class: Project do

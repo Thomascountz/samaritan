@@ -21,12 +21,13 @@
 #  postal_code       :string
 #  country           :string
 #  time_zone         :string           not null
+#  organization_id   :integer
 #
 
 class Project < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
-
-  validates :name, :description, :address_1, :city, :country, presence: true
+  belongs_to :organization
+  validates :name, :description, :address_1, :city, :country, :organization_id, presence: true
   validates :sponsoring_org, :begin_time, :end_time, presence: true
   validates_inclusion_of :children_allowed, in: [ true, false ]
   validates :max_signups, numericality: { only_integer: true, greater_than: 0 }, allow_nil: true

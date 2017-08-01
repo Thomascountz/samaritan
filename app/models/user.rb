@@ -28,7 +28,7 @@
 
 class User < ActiveRecord::Base
   has_many :projects, dependent: :destroy, foreign_key: :owner_id
-
+  has_many :organizations, dependent: :destroy, foreign_key: :user_id
   devise :confirmable, :database_authenticatable, :lockable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end

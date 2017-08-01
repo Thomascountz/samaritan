@@ -21,6 +21,7 @@
 #  postal_code       :string
 #  country           :string
 #  time_zone         :string           not null
+#  organization_id   :integer
 #
 
 require 'rails_helper'
@@ -38,6 +39,11 @@ describe Project do
   context "validations" do
     it "should validate presence of name" do
       bad_project = build(:project, name: nil)
+      expect(bad_project).to be_invalid
+    end
+
+    it "should validate presence of organization" do
+      bad_project = build(:project, organization: nil)
       expect(bad_project).to be_invalid
     end
 
