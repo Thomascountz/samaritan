@@ -89,6 +89,8 @@ GEM
       activesupport (>= 4.2.0)
     i18n (0.8.4)
     i18n_data (0.7.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.8.0)
@@ -227,6 +229,7 @@ DEPENDENCIES
   devise
   factory_girl
   factory_girl_rails
+  launchy
   pg
   poltergeist
   pry
