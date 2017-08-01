@@ -20,6 +20,6 @@ $ ->
       dataType: "json", # data type expected back from the server
                         # "json" will automatically parse the string in to a JS object
                         
-      success: (data, _status, _jqxhr) -> # function to be called if request succeeds
+      success: (data) -> # function to be called if request succeeds
         updateStateOptions(data)
 
